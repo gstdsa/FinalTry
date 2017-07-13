@@ -5,6 +5,9 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Random Pass Design</title>
 <link rel="stylesheet" href="animate.css">
+<script src="sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="sweetalert.css">
+<script src="jquerymin.js"></script>
 <SCRIPT>
     
     window.onload=function()         
@@ -349,6 +352,15 @@ var txt="Your Random Password is:";
 document.getElementById('text').innerHTML=(txt);       //Printing txt inside div with id 'text'
 }
 
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+   swal("Password Copied!");
+}
+
 </SCRIPT>
 
 
@@ -413,16 +425,17 @@ html, body{
 .header-cont {
     width:100%;
     position:fixed;
-    top:0px;
+    top:-36px;
+    height:auto;
 	;
 }
 #header1 {
     height:auto;
-    border:1px solid #CCC;
+   
     width:100%;
     margin:0px auto;
-    background:#3cad7e;
-font-family:verdana;font-size:28px;text-align:center;
+    background:white;
+font-family:verdana;font-size:28px;text-align:center;color:#3cad7e;
 }
 .header2 {
     height:auto;
@@ -512,7 +525,20 @@ position: absolute;
 .search-box:not(:valid) ~ .close-icon {
   display: none;
 }
-
+button
+{
+  height:auto;
+  width:160px;
+  border-radius:8px;
+  padding:10px;
+  font-size:20px;
+  font-family: 'Oswald', sans-serif;
+  height:52px;
+  cursor:pointer;
+  background-color:wheat;
+   border: none;
+  border-radius: 15px;
+}
 
 </style>
 
@@ -520,13 +546,17 @@ position: absolute;
 <body>
 
 <div class="header-cont">
-<div class="animated jackInTheBox" id="header1">
-<h3>
+<div  id="header1">
+
+<h3 class="animated fadeInLeft">
 RAND PASS
 </h3>
+<p  style="font-size:10px" align="right"><i>Your Perfect Passwords&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i/></p>
+<br>
 </div>
 <div id="bash"class="header2">
 <div class="inside">
+<br>
 <div  id='result'>
 </div> 
 </div>                       <!-- div displaying generated passwords -->
@@ -547,6 +577,7 @@ RAND PASS
         </center>
 Character Set
 <br>
+<br><br>
        
 
        <table style="width:100%">
@@ -574,7 +605,8 @@ Character Set
         
      <br>   
    <center>
-        <button class="bttn" id="btnGen">Generate</button>             <!--GENERATE button-->
+        <button class="bttn" id="btnGen">Generate</button> 
+         <button onclick="copyToClipboard('#result')">Copy Password</button>            <!--GENERATE button-->
         </center>
         <br>
     <br>
@@ -582,8 +614,9 @@ Character Set
 
 
 
+
 </div>
-   
+  
 
 
 </body>
