@@ -30,38 +30,56 @@ else if(length<8)
 {
   document.getElementById("bash").style.backgroundColor='ORANGE';
 }
-else if(length>=8 && length <33)
+else if(length>=8 && length <29)
 {
   document.getElementById("bash").style.backgroundColor='GREEN';
 }
-else
+else if(length>=29 && length<33)
 {
   document.getElementById("bash").style.backgroundColor='BLUE';
 }
+else
+{
+document.getElementById("bash").style.backgroundColor='BLACK';
+}  
 
 
 if ((document.getElementById('L').checked)&&(document.getElementById('U').checked)&&(document.getElementById('D').checked)&&(document.getElementById('S').checked))
 {
+start: while(true)
+  {
+    var ps= Array(parseInt(length)).fill("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 
-  var ps= Array(parseInt(length)).fill("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
-var len=ps.length;
+
   if(/\d/.test(ps))
   if(/[^\da-zA-Z]/.test(ps))
   if(/[A-Z]/.test(ps))
   if(/[a-z]/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+  var len=ps.length;
+  if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
+ 
 }
 
 else if ((document.getElementById('L').checked)&&(document.getElementById('U').checked)&&(document.getElementById('D').checked))
 {
+  start: while(true)
+  {
 var ps= Array(parseInt(length)).fill("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/\d/.test(ps))
   if(/[A-Z]/.test(ps))
   if(/[a-z]/.test(ps))
-  if(len==length)
-         document.getElementById('result').innerHTML=(ps);
+  if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
   
 }
 
@@ -69,25 +87,37 @@ var len=ps.length;
 
 else if ((document.getElementById('L').checked)&&(document.getElementById('U').checked)&&(document.getElementById('S').checked))
 {
+  start: while(true)
+  {
    var ps= Array(parseInt(length)).fill("ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/[^\da-zA-Z]/.test(ps))
   if(/[A-Z]/.test(ps))
   if(/[a-z]/.test(ps))
-  if(ps.length==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
  
 }
 
 else if ((document.getElementById('L').checked)&&(document.getElementById('D').checked)&&(document.getElementById('S').checked))
 {
+  start: while(true)
+  {
    var ps= Array(parseInt(length)).fill("0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/\d/.test(ps))
   if(/[^\da-zA-Z]/.test(ps))
   if(/[a-z]/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+  if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
  
 }
 
@@ -95,13 +125,19 @@ var len=ps.length;
 
 else if ((document.getElementById('U').checked)&&(document.getElementById('D').checked)&&(document.getElementById('S').checked))
 {
+  start: while(true)
+  {
  var ps= Array(parseInt(length)).fill("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[]^_`{|}~").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/\d/.test(ps))
   if(/[^\da-zA-Z]/.test(ps))
   if(/[A-Z]/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
 }
 
 
@@ -109,12 +145,18 @@ var len=ps.length;
 
 else if ((document.getElementById('L').checked)&&(document.getElementById('D').checked))
 {
+  start: while(true)
+  {
      var ps= Array(parseInt(length)).fill("0123456789abcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/\d/.test(ps))
   if(/[a-z]/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps); 
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
 
 }
 
@@ -123,12 +165,18 @@ var len=ps.length;
 
 else if ((document.getElementById('L').checked)&&(document.getElementById('S').checked))
 {
+  start: while(true)
+  {
       var ps= Array(parseInt(length)).fill("Z!#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/[^\da-zA-Z]/.test(ps))
   if(/[a-z]/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
   
 }
 
@@ -137,12 +185,18 @@ var len=ps.length;
 
 else if ((document.getElementById('L').checked)&&(document.getElementById('U').checked))
 {
+  start: while(true)
+  {
  var ps= Array(parseInt(length)).fill("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/[A-Z]/.test(ps))
   if(/[a-z]/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
     
 
 }
@@ -152,12 +206,18 @@ var len=ps.length;
 
 else if ((document.getElementById('U').checked)&&(document.getElementById('D').checked))
 {
+  start: while(true)
+  {
   var ps= Array(parseInt(length)).fill("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/[A-Z]/.test(ps))
   if(/\d/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);  
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps); 
  
 
 }
@@ -168,12 +228,18 @@ var len=ps.length;
 
 else if ((document.getElementById('U').checked)&&(document.getElementById('S').checked))
 {
+  start: while(true)
+  {
  var ps= Array(parseInt(length)).fill("ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[]^_`{|}~").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/[^\da-zA-Z]/.test(ps))
   if(/[A-Z]/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
  
 }
 
@@ -182,12 +248,18 @@ var len=ps.length;
 
 else if ((document.getElementById('D').checked)&&(document.getElementById('S').checked))
 {
+  start: while(true)
+  {
     var ps= Array(parseInt(length)).fill("0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
   if(/\d/.test(ps))
   if(/[^\da-zA-Z]/.test(ps))
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
  
 }
 
@@ -196,10 +268,16 @@ var len=ps.length;
 
 else if (document.getElementById('L').checked==true)
 {
+  start: while(true)
+  {
    var ps= Array(parseInt(length)).fill("abcdefghijklmnopqrstuvwxyz").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
 }
 
 
@@ -208,10 +286,16 @@ var len=ps.length;
 
 else if (document.getElementById('U').checked)
 {
+  start: while(true)
+  {
  var ps= Array(parseInt(length)).fill("ABCDEFGHIJKLMNOPQRSTUVWXYZ").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
  
 }
 
@@ -220,10 +304,16 @@ var len=ps.length;
 
 else if (document.getElementById('D').checked)
 {
+  start: while(true)
+  {
   var ps= Array(parseInt(length)).fill("0123456789").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
  
 }
 
@@ -233,13 +323,21 @@ var len=ps.length;
 
 else if (document.getElementById('S').checked)
 {
+  start: while(true)
+  {
     var ps= Array(parseInt(length)).fill("!#$%&'()*+,-./:;<=>?@[]^_`{|}~").map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
 var len=ps.length;
-  if(len==length)
-      document.getElementById('result').innerHTML=(ps);
+   if(len!=length) continue start;
+  break;
+}
+if(length>32)
+ps="You dont need that!"
+  document.getElementById('result').innerHTML=(ps);
 }
 else
-{ var ps="WRONG INPUT";
+{ 
+  document.getElementById("bash").style.backgroundColor='PURPLE';
+var ps="NO INPUT!";
     document.getElementById('result').innerHTML=(ps); }
 
 }
