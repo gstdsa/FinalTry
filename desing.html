@@ -32,7 +32,7 @@ else if(length<8)
 }
 else if(length>=8 && length <29)
 {
-  document.getElementById("bash").style.backgroundColor='GREEN';
+  document.getElementById("bash").style.backgroundColor='#3cad7e';
 }
 else if(length>=29 && length<33)
 {
@@ -364,6 +364,7 @@ document.getElementById('text').innerHTML=(txt);       //Printing txt inside div
     #cl{color:red;font-family:comic sans MS;font-size:45px;}   /* title font */
     #bl{color:red;font-family:verdana;font-size:32px;}   /* Body text font */
     .bk{color:cyan;font-family:verdana;font-size:28px;}  /* Print message font */
+    #lwidth{color:blue;}
    
     padding: 20px;
     } /* Password print font */
@@ -377,7 +378,7 @@ document.getElementById('text').innerHTML=(txt);       //Printing txt inside div
   text-decoration: none;
   outline: none;
   color: white;
-  background-color:#3e8e41;
+  background-color:red;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
@@ -386,17 +387,28 @@ document.getElementById('text').innerHTML=(txt);       //Printing txt inside div
 }
 
 .bttn:hover {
-background-color: #3e8e41}               
+background-color: orange;}               
 
 .bttn:active {
   background-color: #7a42f4;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 8px #666;
   transform: translateY(4px);
 }
 
+html, body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #3cad7e;
+  font-family: 'Arial', sans-serif;
+  color:white;
+}
 .body{
     margin:0px;
-    background:#000;
+    background:#3cad7e;
 }
 .header-cont {
     width:100%;
@@ -405,20 +417,20 @@ background-color: #3e8e41}
 	;
 }
 #header1 {
-    height:60px;
+    height:auto;
     border:1px solid #CCC;
     width:100%;
     margin:0px auto;
-    background:white;
+    background:#3cad7e;
 font-family:verdana;font-size:28px;text-align:center;
 }
 .header2 {
-    height:200px;
-    border:1px solid #CCC;
+    height:auto;
+    
     width:100%;
     margin:0px auto;
-    background:#000;color:red;
-font-family:verdana;font-size:44px;text-align:center;
+    background:#000;color:#3cad7e;
+font-family:verdana;font-size:32px;text-align:center;
 position: absolute; 
   display: table; 
 }
@@ -426,20 +438,80 @@ position: absolute;
   display: table-cell; 
   vertical-align: middle; 
   text-align: center; 
+  font-size:66px;
 }
 .content {
+  height:auto;
     width:100%;
-    background: #F0F0F0;
-    border: 1px solid #CCC;
-    background:white;
+    background: #3cad7e;
+    
+   
     font-size:32px;
     margin:auto;
 
   
 }
 .bk{font-family:verdana;font-size:28px;text-align:center;}  
-#bash{font-family:verdana;font-size:28px;text-align:center; background:aliceblue;color:white;}
+#bash{font-family:verdana;font-size:28px;text-align:center; background:#3cad7e;color:white;}
 
+
+
+
+/*css for custom textbox*/
+.redfamily {
+  color: red; 
+}
+.search-box,.close-icon,.search-wrapper {
+  position: relative;
+  padding: 10px;
+}
+.search-wrapper {
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+.search-box {
+  width: 99%;
+  border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 15px;
+}
+.search-box:focus {
+  box-shadow: 0 0 15px 5px #b0e0ee;
+  border: 2px solid #bebede;
+}
+.close-icon {
+  border:1px solid transparent;
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.close-icon:after {
+  content: "X";
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-color: #FA9595;
+  z-index:1;
+  right: 35px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 2px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: 0 0 2px #E50F0F;
+  cursor: pointer;
+}
+.search-box:not(:valid) ~ .close-icon {
+  display: none;
+}
 
 
 </style>
@@ -449,7 +521,9 @@ position: absolute;
 
 <div class="header-cont">
 <div class="animated jackInTheBox" id="header1">
+<h3>
 RAND PASS
+</h3>
 </div>
 <div id="bash"class="header2">
 <div class="inside">
@@ -462,26 +536,44 @@ RAND PASS
 <div class="content">
 
     <br><br><br><br><br><br><br><br>
-        <center>
+        
         <label for="in">Enter the password length:</label>
-        <input id="passIn" type="number" value="8"/>                           <!--INPUT NUMBER BOX-->
+        <div class="search-wrapper">
+          <input  type="number" name="focus" required class="search-box" id ="passIn" placeholder="Password Length" value="8"/>
+    
+    </div>
+                                  <!--INPUT NUMBER BOX-->
+
         </center>
-        <CENTER>
-        <br>
-        <label>Lowercase:
-        <input type="checkbox" id="L" checked>
-        <br>
-        <label>Uppercase:
-        <input type="checkbox" id="U">
-        <br>
-        <label>Digits:
-        <input type="checkbox" id="D" checked>
-        <br>
-        <label>Special Characters:
-        <input type="checkbox" id="S">
-        <br>
-        </center>
-        <center>
+Character Set
+<br>
+       
+
+       <table style="width:100%">
+  <tr>
+    <th><label>Lowercase:
+        <input type="checkbox" id="L" checked></th>
+    <th><label>Uppercase:
+        <input type="checkbox" id="U"></th>
+
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+
+        <tr>
+    <th><label>Digits:
+        <input type="checkbox" id="D" checked></th>
+    <th> <label>Special chars:
+        <input type="checkbox" id="S"></th>
+  </tr>
+  </table>
+        
+     <br>   
+   <center>
         <button class="bttn" id="btnGen">Generate</button>             <!--GENERATE button-->
         </center>
         <br>
