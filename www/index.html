@@ -19,7 +19,16 @@
 </head>
 <body>
 
-<div class="header-cont">
+
+<div data-role="page">
+ 
+        <div data-role="header">
+            <h1>RAND PASS</h1>
+        </div><!-- /header -->
+ 
+        <div role="main" class="ui-content">
+
+        <div class="header-cont">
 <div  id="header1">
 <h3 class="animated fadeInLeft">
 RAND PASS
@@ -42,7 +51,7 @@ RAND PASS
         
         <label for="in">Enter the password length:</label>
         <div class="search-wrapper">
-          <input  type="number" name="focus" required class="search-box" id ="passIn" placeholder="Password Length" value="8"/>
+          <input  type="range" name="focus" required class="search-box" id ="passIn"  value="8" min=1 max=33/>
     
     </div>
                                   <!--Custom INPUT NUMBER BOX-->
@@ -75,6 +84,7 @@ Character Set
         <input type="checkbox" id="S"></th>
   </tr>
   </table>
+
         
      <br>   
    <center>
@@ -87,6 +97,17 @@ Character Set
 
 </div>
   
+            
+        </div><
+        !-- /content -->
+ 
+        <div data-role="footer">
+            <h4>BY GAUTHAM PRAKASH</h4>
+        </div><!-- /footer -->
+ 
+    </div><!-- /page -->
+
+
 
 
 </body>
