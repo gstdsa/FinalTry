@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Random Pass Alphav1.0</title>
+    </head>
+	<script>
+	
+	window.onload=function()         
+	{
+	document.getElementById('btnGen').addEventListener('click',createPassword)             //calling createPassword() when GENERATE button presssed!!
+	document.getElementById('btnGen').addEventListener('click',labl)                       //calling lalbl() when GENERATE button presssed!!
+	}
+
+	function createPassword(e) {
+	
+	var length=document.getElementById('passIn').value;   //Fetching length from input box
+	
+	
+    var alpha = "abcdefghijklmnopqrstuvwxyz";
+    var caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var numeric = "0123456789";
+    var special = "!$^&*-=+_?";
+
+    var options = [alpha, caps, numeric, special];
+
+    var password = "";
+    var passwordArray = Array(length);
+
+    for (i = 0; i < length; i++) {
+        var currentOption = options[Math.floor(Math.random() * options.length)];
+        var randomChar = currentOption.charAt(Math.floor(Math.random() * currentOption.length));
+        password += randomChar;
+        passwordArray.push(randomChar);
+    }
+
+    checkPassword();
+
+    function checkPassword() {
+        var missingValueArray = [];
+        var containsAll = true;
+
+        options.forEach(function (e, i, a) {
+            var hasValue = false;
+            passwordArray.forEach(function (e1, i1, a1) {
+                if (e.indexOf(e1) > -1) {
+                    hasValue = true;
+                }
+            });
+
+            if (!hasValue) {
+                missingValueArray = a;
+                containsAll = false;
+            }
+        });
+
+        if (!containsAll) {
+            passwordArray[Math.floor(Math.random() * passwordArray.length)] = missingValueArray.charAt(Math.floor(Math.random() * missingValueArray.length));
+            password = "";
+            passwordArray.forEach(function (e, i, a) {
+                password += e;
+            });
+            checkPassword();
+        }
+    }
+
+    var ps= password;
+	
+	document.getElementById('result').innerHTML=(ps);   //Printing ps inside div with id 'result'
+}
+
+function labl(c)      //Fn to print password text when button triggered
+{
+var txt="Your Random Password is:";
+document.getElementById('text').innerHTML=(txt);       //Printing txt inside div with id 'text'
+}
+
+
+
+</script>
+	<style>
+	
+	
+	* {
+    /* With these codes padding and border does not increase it's width and gives intuitive style.*/
+  
+	-webkit-box-sizing: border-box;   
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+	#cl{color:red;font-family:comic sans MS;font-size:38px;}   /* title font */
+	#bl{color:red;font-family:verdana;font-size:24px;}   /* Body text font */
+	.bk{color:cyan;font-family:verdana;font-size:24px;}  /* Print message font */
+	.bf{color:yellow;font-family:verdana;font-size:24px;} /* Password print font */
+    #cr{color:teal;font-size:13px;}
+	
+	
+
+	#envelope{                                           
+	width: 55%;
+	margin: 10px 30% 10px 25%;
+	padding:10px 0;
+	border: 2px solid gray;
+	border-radius:10px;
+	
+	background-image: url("matrix.png");
+} 
+
+.bttn {                               
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color:#3e8e41;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  font-family:verdana;
+  font-size: 13px;
+}
+
+.bttn:hover {background-color: #3e8e41}               
+
+.bttn:active {
+  background-color: #7a42f4;
+
+   
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+}
+
+
+	}
+	</style>
+    <body bgcolor="black">
+        <script type="text/javascript" src="cordova.js"></script>      <!--DON'T REMOVE THIS LINE-->
+		<br><br>
+		<div id="envelope">
+		<center>
+		<h3 id="cl"> RANDOM PASS</h3>
+		</center>
+		<br>
+		<br>
+		<div id="bl">
+		<center>
+		<label for="in">Enter the password length:</label>
+		<input id="passIn" type="number" />                           <!--INPUT NUMBER BOX-->
+		</center>
+		<br>
+		<br>
+		<center>
+		<button class="bttn" id="btnGen">Generate</button>             <!--GENERATE button-->
+		</center>
+		<br>
+	<br>
+	<br>
+<center><div class="bk" id="text"></div>                           <!-- div displaying "YOUR PASSWORD IS " text-->
+</center>
+		
+<center><div class="bf" id="result"></div>                        <!-- div displaying generated passwords -->
+</center>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+	
+		</div>
+	<p align=right id="cr">Created by Gautham Prakash<p>
+    </body>
+</html>
