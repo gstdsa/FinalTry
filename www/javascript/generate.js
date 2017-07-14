@@ -9,30 +9,7 @@ function createPassword(e)
 {
 
  var length=document.getElementById('passIn').value;
- if(length<1)
-{
-  document.getElementById("bash").style.backgroundColor='BLACK';
-}
-else if(length<5)
-{
-  document.getElementById("bash").style.backgroundColor='RED';
-}
-else if(length<8)
-{
-  document.getElementById("bash").style.backgroundColor='ORANGE';
-}
-else if(length>=8 && length <29)
-{
-  document.getElementById("bash").style.backgroundColor='#3cad7e';
-}
-else if(length>=29 && length<33)
-{
-  document.getElementById("bash").style.backgroundColor='BLUE';
-}
-else
-{
-document.getElementById("bash").style.backgroundColor='BLACK';
-}  
+
 
 
 if ((document.getElementById('L').checked)&&(document.getElementById('U').checked)&&(document.getElementById('D').checked)&&(document.getElementById('S').checked))

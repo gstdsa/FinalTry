@@ -28,6 +28,7 @@
   box-shadow: 0 9px #999;
   font-family:verdana;
   font-size: 13px;
+  
 }
 
 .bttn:hover {
@@ -38,6 +39,12 @@ background-color: orange;}
   box-shadow: 0 8px #666;
   transform: translateY(4px);
 }
+.myButton {
+color: rgb(255, 255, 255); font-size: 20px; line-height: 20px; padding: 18px; border-radius: 4px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) -6px 5px 15px 5px; border: 0px double rgb(138, 26, 164); display: inline-block;}
+.myButton:hover {
+background: #1C6EA4; }
+.myButton:active {
+background: #144E75; }
 
 html, body{
   display: flex;
@@ -61,41 +68,20 @@ html, body{
     height:auto;
 	;
 }
-#header1 {
-    height:auto;
-   
-    width:100%;
-    margin:0px auto;
-    background:white;
-font-family:verdana;font-size:28px;text-align:center;color:#3cad7e;
-}
-.header2 {
-    height:auto;
+
+.rs{outline: 8px outset #3cad7e;
+outline-offset: 0px;
+	
+height:45px;
     
-    width:100%;
+    width:98%;
     margin:0px auto;
-    background:#000;color:#3cad7e;
+    
 font-family:verdana;font-size:32px;text-align:center;
 position: absolute; 
-  display: table; 
-}
-.inside {
-  display: table-cell; 
-  vertical-align: middle; 
-  text-align: center; 
-  font-size:66px;
-}
-.content {
-  height:auto;
-    width:100%;
-    background: #3cad7e;
-    
-   
-    font-size:32px;
-    margin:auto;
+  display: table; }
 
-  
-}
+
 .bk{font-family:verdana;font-size:28px;text-align:center;}  
 #bash{font-family:verdana;font-size:28px;text-align:center; background:#3cad7e;color:white;}
 
@@ -103,8 +89,7 @@ position: absolute;
 
 
 /*css for custom textbox*/
-.redfamily {
-  color: red; 
+
 }
 .search-box,.close-icon,.search-wrapper {
   position: relative;
