@@ -68,6 +68,12 @@ html, body{
     height:auto;
 	;
 }
+#neon {
+color: #FFF;
+background-color: #E7E4E4;
+text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+font-size:45px;
+}
 
 .rs{outline: 8px outset #3cad7e;
 outline-offset: 0px;
