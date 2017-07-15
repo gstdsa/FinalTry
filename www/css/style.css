@@ -25,7 +25,7 @@
   background-color:red;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 6px #999;
   font-family:verdana;
   font-size: 13px;
   
@@ -36,15 +36,10 @@ background-color: orange;}
 
 .bttn:active {
   background-color: #7a42f4;
-  box-shadow: 0 8px #666;
-  transform: translateY(4px);
+  box-shadow: 0 4px #666;
+  transform: translateY(2px);
 }
-.myButton {
-color: rgb(255, 255, 255); font-size: 20px; line-height: 20px; padding: 18px; border-radius: 4px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) -6px 5px 15px 5px; border: 0px double rgb(138, 26, 164); display: inline-block;}
-.myButton:hover {
-background: #1C6EA4; }
-.myButton:active {
-background: #144E75; }
+
 
 html, body{
   display: flex;
